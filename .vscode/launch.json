@@ -1,0 +1,53 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Train CAN-GAN-tensorflow",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/CAN-GAN-tensorflow/main_train_gan.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--epochs",
+                "1000",
+                "--checkpoint-dir",
+                "${workspaceFolder}/CAN-GAN-tensorflow/model/net_can_lum_gan",
+                "--resume_dir",
+                "${workspaceFolder}/CAN-GAN-tensorflow/model/net_can_lum_gan",
+                "--batch-size",
+                "3",
+                "--log-dir",
+                "${workspaceFolder}/CAN-GAN-tensorflow/model/net_can_lum_gan/logs/",
+                "--train-set",
+                "${workspaceFolder}/Datasets/headcuts/ABC/train",
+                "--val-set",
+                "${workspaceFolder}/Datasets/headcuts/ABC/val",
+                "--viz",
+                "0"
+            ]
+        },
+        {
+            "name": "Test CAN-GAN-tensorflow",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/CAN-GAN-tensorflow/main_test_gan.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--checkpoint-dir",
+                "${workspaceFolder}/CAN-GAN-tensorflow/model/net_can_lum_gan",
+                "--batch-size",
+                "1",
+                "--test-set",
+                "${workspaceFolder}/Datasets/headcuts/ABC/val",
+                "--output-dir",
+                "${workspaceFolder}/CAN-GAN-tensorflow/model/net_can_lum_gan/output_pred",
+                
+            ]
+        }
+    ]
+}
