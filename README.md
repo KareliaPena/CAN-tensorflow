@@ -1,2 +1,3 @@
-# CAN-tensorflow
- 
+# CAN-GAN-tensorflow
+
+More details soon! 
