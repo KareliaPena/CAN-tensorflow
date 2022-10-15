@@ -101,7 +101,7 @@ def main():
 
             # saving (checkpoint) the model every 20 epochs
             if (epoch + 1) % 5 == 0:
-                checkpoint.save(file_prefix=checkpoint_prefix)
+                checkpoint.save(file_prefix=checkpoint_prefix+'_epoch='+ str(epoch))
                 for n, (input_image, target) in validate_ds.enumerate():
                     if n == 0:
                         filename_output = "%s/Current.png" % (output_dir)

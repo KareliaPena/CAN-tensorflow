@@ -30,7 +30,7 @@ def main():
     print("---> Constructing Network Architecture...")
     generator = net.build_CAN()
     tf.keras.utils.plot_model(generator, show_shapes=True)
-    checkpoint_prefix = os.path.join(args.checkpoint_dir, "ckpt-215")
+    checkpoint_prefix = os.path.join(args.checkpoint_dir, "ckpt_epoch=814-163")
     checkpoint = tf.train.Checkpoint(generator=generator)
     checkpoint.restore(checkpoint_prefix)
     for n, filename in test_dataset.enumerate():
